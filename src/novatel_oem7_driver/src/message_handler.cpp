@@ -36,7 +36,9 @@ namespace novatel_oem7_driver
   {
     // Load the plugins and create the dispatch table.
     
-    node.declare_parameter("oem7_msg_handlers");
+    rcl_interfaces::msg::ParameterDescriptor descriptor;
+    descriptor.dynamic_typing = true;
+    node.declare_parameter("oem7_msg_handlers", rclcpp::ParameterValue{}, descriptor);
     rclcpp::Parameter msg_handlers_param = node.get_parameter("oem7_msg_handlers");
     std::vector<std::string> msg_handler_names = msg_handlers_param.as_string_array();
     for(const auto& name : msg_handler_names)

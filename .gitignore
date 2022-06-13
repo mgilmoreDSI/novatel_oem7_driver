@@ -9,9 +9,11 @@ install
 docker-kinetic-test
 docker-melodic-test
 doc
+log
 src/CMakeLists.txt
 *.pyc
 *.deb
 *.ddeb
 debian
 obj-*
+.vscode

@@ -12,6 +12,7 @@ find_package(rclcpp REQUIRED)
 find_package(rclcpp_components REQUIRED) 
 find_package(std_msgs REQUIRED)
 find_package(gps_msgs REQUIRED)
+find_package(gps_tools REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(nmea_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
@@ -104,6 +105,8 @@ ament_target_dependencies(${PROJECT_NAME}
 	pluginlib
 	std_msgs 
 	gps_msgs 
+   gps_tools
+   rclcpp_components
 	sensor_msgs 
 	nmea_msgs 	
 	nav_msgs
@@ -114,6 +117,7 @@ ament_target_dependencies(${PROJECT_NAME}
 
 ament_target_dependencies(${PROJECT_NAME}_exe 
     rclcpp
+    rclcpp_components
 	pluginlib
 	novatel_oem7_msgs 
 )
